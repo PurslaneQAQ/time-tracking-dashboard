@@ -1,0 +1,21 @@
+@import 'base';
+
+#root{
+  width: 100%;
+}
+
+.App {
+  background-color: $primary-bg;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $primary-dark-color;
+  font-family: $font-stack;
+  font-weight: 600;
+}
+
