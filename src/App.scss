@@ -1,24 +1,46 @@
 @import 'base';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
-  background-color: $primary-bg;;
-}
-
-#root{
-  width: 100%;
+  @apply text-white text-base font-light font-sans;
+  background-color: $Very-dark-blue;
 }
 
 .App {
-  width: 100vw;
-  min-height: 100vh;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: $primary-dark-color;
-  font-family: $font-stack;
-  font-weight: 600;
+  min-height: calc(100vh - 30px);
+}
+
+.Primary-bold {
+  @apply relative text-xl lg:text-2xl;
+}
+
+.Primary {
+  @apply text-lg lg:text-xl;
+}
+
+.Tertiary, .Quaternary {
+  color: $Pale-Blue;
+}
+
+.Quaternary {
+  @apply text-tiny;
+}
+
+.Card-group {
+  @apply m-2 lg:m-4;
+  .Card:not(:first-child){
+    margin-top: -24px;
+  }
+}
+
+.Card {
+  @apply relative lg:w-56 xl:w-64 w-96 min-w-0 lg:py-7 lg:px-8 p-6;
+  max-width: calc(100vw - 32px);
+  border-radius: 12px;
+  &.active {
+    background-color: $Desaturated-blue;
+  }
 }
 

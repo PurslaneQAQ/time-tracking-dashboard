@@ -23,11 +23,21 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+          },
+          'sass-loader',
+          'postcss-loader',
+        ],
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|ttf)$/,
-        use: ['file-loader'],
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       },
       {
         test: /\.svg$/,
